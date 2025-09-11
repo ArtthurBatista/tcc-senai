@@ -1,0 +1,24 @@
+import React from 'react';
+import './header.css';
+import { Link } from 'react-router-dom';
+
+function Header() {
+  return (
+    <header className="header">
+      <nav>
+        <ul>
+          <div className="logo">
+        <a href='/' ><img src="/images/LogoB.png" alt="Viajante+"/></a> 
+      </div>
+          <li><a href="">Dashboard</a></li>
+          <li><a href="">Minhas Viagens</a></li>
+          <li><a href="">Gastos</a></li>
+          <li><Link to="/checklist">Checklist</Link></li>
+          <li><Link to="/login">Entrar</Link></li>
+        </ul>
+      </nav>
+    </header>
+  );
+}
+
+export default Header;

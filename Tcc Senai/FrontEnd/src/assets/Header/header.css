@@ -1,0 +1,60 @@
+.header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 18px 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.18);
+  box-sizing: border-box;
+  z-index: 999;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-right: 350px; 
+}
+
+.logo img {
+  height: 80px;
+  vertical-align: middle;
+  
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  justify-content: center; 
+}
+
+nav ul li {
+  display: flex;
+  align-items: center;
+}
+
+
+nav ul li.cadastrar,
+nav ul li.entrar {
+  margin-left: auto;
+  justify-content: flex-end;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+  color: orange;
+}

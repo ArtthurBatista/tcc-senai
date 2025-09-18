@@ -10,8 +10,8 @@ function Header() {
           <div className="logo">
         <a href='/' ><img src="/images/LogoB.png" alt="Viajante+"/></a> 
       </div>
-          <li><a href="">Dashboard</a></li>
-          <li><a href="">Minhas Viagens</a></li>
+          <li><Link to="/dashboard">Dashboard</Link></li>
+          <li><Link to="/minhas-viagens">Minhas Viagens</Link></li>
           <li><a href="">Gastos</a></li>
           <li><Link to="/checklist">Checklist</Link></li>
           <li><Link to="/login">Entrar</Link></li>

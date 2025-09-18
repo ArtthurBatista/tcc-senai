@@ -1,48 +1,35 @@
- html, #root, .app {
+html, #root, .app {
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: Arial, sans-serif;
 }
 
-.hero {
-  width: 100vw;
-  height: 100vh;
-  background: url('/images/Aviao.png') no-repeat;
-  background-size: 110% 110%;
-  background-position: 0% 50%;
-  animation: gradientBG 15s ease-in-out infinite;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 body {
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
     background-size: 110% 110%;
-    align-items: center;
     animation: gradientBG 15s ease infinite;
-    overflow: hidden;   
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 @keyframes gradientBG {
     0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%;}
-    100% { background-position: 0% 50%;}
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-
+/* Mantém o conteúdo centralizado dentro da seção hero */
 .hero-content {
   background: rgba(0, 0, 0, 0.4);
-  padding: 50px 30px;      
+  padding: 50px 30px;
   border-radius: 10px;
   text-align: left;
   color: white;
-  margin-left: 80px;
-  width: 480px;            
-  min-height: 260px;      
+  margin: 80px auto; /* centraliza horizontalmente */
+  width: 480px;
+  min-height: 260px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -55,16 +42,16 @@ body {
 
 .hero-content p {
   font-size: 18px;
-  margin-bottom: 50px; 
+  margin-bottom: 50px;
 }
 
 .hero-content button {
-  padding: 10px 12px;   
+  padding: 10px 12px;
   font-size: 15px;
   color: white;
   background-color: orange;
   border: none;
-  border-radius: 25px;        
+  border-radius: 25px;
   cursor: pointer;
   margin-top: 20px;
   transition: background 0.2s;

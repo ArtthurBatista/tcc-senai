@@ -6,6 +6,8 @@ import PlanejarViagem from './assets/PlanejarViagem/planejar';
 import Home from './assets/Home/home';
 import Login from './assets/Login/login';
 import Checklist from './assets/Checklist/checklist';
+import Dashboard from './assets/Dashboard/dashboard';
+import MinhasViagens from './assets/Minhas Viagens/minhas-viagens';
 import './app.css';
 
 function App() {
@@ -20,6 +22,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/planejar" element={<PlanejarViagem />} />
           <Route path="/checklist" element={<Checklist />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/minhas-viagens" element={<MinhasViagens />} />
+
         </Routes>
       </div>
     </Router>

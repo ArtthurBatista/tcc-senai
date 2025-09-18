@@ -5,15 +5,6 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
-  min-height: 100vh;
-  background: url('/images/Aviao.png') center center/cover no-repeat;
-  display: flex;
-  justify-content: center;
-  padding: 0 20px;
-  color: #fff;
-}
-
 .dashboard {
   width: 100%;
   max-width: 1200px;
@@ -43,7 +34,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 20px;
-  flex-wrap: nowrap; /* Mantém lado a lado */
+  flex-wrap: nowrap;
   margin-top: 20px;
 }
 

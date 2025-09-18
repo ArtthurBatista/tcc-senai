@@ -5,23 +5,6 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    background-size: 110% 110%;
-    align-items: center;
-    background: url('/images/Aviao.png') center center/cover no-repeat;
-    animation: gradientBG 15s ease infinite;
-    overflow: hidden;   
-}
-
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%;}
-    100% { background-position: 0% 50%;}
-}
-
 .glass-container{
     position: relative;
     width: 380px;

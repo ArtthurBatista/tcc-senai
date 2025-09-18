@@ -1,7 +1,7 @@
 .header {
   display: flex;
-  justify-content: space-between; 
   align-items: center;
+  justify-content: space-between;
   padding: 18px 50px;
   position: fixed;
   top: 0;
@@ -12,16 +12,8 @@
   z-index: 999;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  margin-right: 350px; 
-}
-
 .logo img {
   height: 80px;
-  vertical-align: middle;
-  
 }
 
 nav ul {
@@ -30,20 +22,11 @@ nav ul {
   gap: 28px;
   margin: 0;
   padding: 0;
-  flex: 1;
-  justify-content: center; 
-}
-
-nav ul li {
-  display: flex;
   align-items: center;
 }
 
-
-nav ul li.cadastrar,
 nav ul li.entrar {
-  margin-left: auto;
-  justify-content: flex-end;
+  margin-left: 50px; 
 }
 
 nav ul li a {

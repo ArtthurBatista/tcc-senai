@@ -1,4 +1,3 @@
-/* Reset e fontes */
 * {
   margin: 0;
   padding: 0;
@@ -6,16 +5,6 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
-  min-height: 100vh;
-  background: url('/images/Aviao.png') center center/cover no-repeat;
-  display: flex;
-  justify-content: center;
-  padding: 0 20px;
-  color: #fff;
-}
-
-/* Container do formulário */
 .planejar-viagem-container {
   width: 100%;
   max-width: 600px;
@@ -32,7 +21,7 @@ body {
   text-align: center;
 }
 
-/* Formulário */
+
 .planejar-form {
   display: flex;
   flex-direction: column;
@@ -82,7 +71,7 @@ body {
   transform: translateY(-3px);
 }
 
-/* Responsividade */
+
 @media (max-width: 768px) {
   .planejar-form {
     padding: 20px;

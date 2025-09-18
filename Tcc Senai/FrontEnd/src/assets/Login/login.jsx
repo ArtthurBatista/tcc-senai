@@ -21,7 +21,7 @@ function Login() {
                     <label>
                         <input type="checkbox" /> Lembrar Senha
                     </label>
-                    <a href="#">Esqueceu a senha?</a>
+                    <a href="">Esqueceu a senha?</a>
                 </div>
 
                 <button type="submit" className="login-btn">Login</button>

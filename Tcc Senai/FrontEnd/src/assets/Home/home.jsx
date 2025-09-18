@@ -15,6 +15,8 @@ function Home() {
       <p>Tudo da sua viagem, organizado como deveria ser.</p>
       <button onClick={handleClick}>Planejar minha viagem</button>
     </div>
+    
+    
   );
 }
 

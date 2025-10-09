@@ -8,6 +8,7 @@ import Login from './assets/Login/login';
 import Checklist from './assets/Checklist/checklist';
 import Dashboard from './assets/Dashboard/dashboard';
 import MinhasViagens from './assets/Minhas Viagens/minhas-viagens';
+import Gastos from './assets/Gastos/gastos';
 import './app.css';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/checklist" element={<Checklist />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/minhas-viagens" element={<MinhasViagens />} />
+          <Route path="/gastos" element={<Gastos />} />
 
         </Routes>
       </div>

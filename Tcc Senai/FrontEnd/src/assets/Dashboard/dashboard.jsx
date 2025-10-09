@@ -46,9 +46,8 @@ function Dashboard() {
 
   return (
     <div className="dashboard">
-      {/* Header */}
       <div className="dashboard-header">
-        <h1>Controle de Viagens ✈️</h1>
+        <h1>Controle de Viagens</h1>
         <p>Bem-vindo de volta, <strong>Usuario</strong></p>
         <div className="kpis">
           <div className="kpi-card receita">
@@ -62,10 +61,8 @@ function Dashboard() {
         </div>
       </div>
 
-      {/* Conteúdo */}
       <div className="dashboard-content">
-
-        {/* Receita por período */}
+       
         <div className="glass-card">
           <h2>Receita por período</h2>
           {receitaData.map((d, i) => (
@@ -77,7 +74,7 @@ function Dashboard() {
           ))}
         </div>
 
-        {/* Representatividade por canal */}
+        
         <div className="glass-card">
           <h2>Representatividade por canal</h2>
           <div className="pie-container">
@@ -93,7 +90,7 @@ function Dashboard() {
           </div>
         </div>
 
-        {/* Receita por país */}
+       
         <div className="glass-card">
           <h2>Receita por País</h2>
           {receitaPais.map((p, i) => (
@@ -105,7 +102,7 @@ function Dashboard() {
           ))}
         </div>
 
-        {/* Tabela de destinos */}
+       
         <div className="glass-card">
           <h2>Viagens por Destino e Ano</h2>
           <table>

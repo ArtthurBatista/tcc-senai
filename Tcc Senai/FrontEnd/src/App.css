@@ -1,10 +1,7 @@
-
-
 body {
-  background: url('/images/Aviao.png') center center/cover no-repeat;
+  background: url('/images/Aviao.png') center center/cover no-repeat fixed;
   background-size: 110% 110%;
-  display: flex;
-  justify-content: center;
+  min-height: 100vh;
   padding: 0 20px;
   color: #fff;
 }

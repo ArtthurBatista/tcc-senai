@@ -9,6 +9,7 @@ import Checklist from './assets/Checklist/checklist';
 import Dashboard from './assets/Dashboard/dashboard';
 import MinhasViagens from './assets/Minhas Viagens/minhas-viagens';
 import Gastos from './assets/Gastos/gastos';
+import DetalhesViagem from './assets/DetalhesViagem/detalhes';
 import './app.css';
 
 function App() {
@@ -26,7 +27,8 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/minhas-viagens" element={<MinhasViagens />} />
           <Route path="/gastos" element={<Gastos />} />
-
+          
+          <Route path="/viagem/:id" element={<DetalhesViagem />} />
         </Routes>
       </div>
     </Router>

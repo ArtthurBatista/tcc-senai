@@ -1,0 +1,132 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 30px 40px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px);
+  color: #fff;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  text-align: center;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  transition: background 0.3s;
+}
+
+.form-group input::placeholder {
+  color: #ddd;
+}
+
+.form-group input[type="file"] {
+  background: transparent;
+  color: #fff;
+}
+
+.form-group input:hover,
+.form-group select:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.image-preview {
+  display: block;
+  max-width: 200px;
+  max-height: 150px;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.btn-save {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-save:hover {
+  background-color: #218838;
+}
+
+.btn-cancel {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-cancel:hover {
+  background-color: #c82333;
+}
+
+@media (max-width: 500px) {
+  .modal-content {
+    padding: 20px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.viagem-card img {
+  width: 100%;
+  height: 200px; 
+  object-fit: cover;
+  display: block;
+}

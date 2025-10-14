@@ -1,0 +1,24 @@
+.trip-details-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.trip-details-container h1 {
+  margin-bottom: 1rem;
+}
+
+.trip-details-container .trip-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.trip-details-container hr {
+  margin: 2rem 0;
+}

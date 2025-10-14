@@ -1,39 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './cadastro.css';
 import { Link, useNavigate } from 'react-router-dom';
-
+import axios from 'axios';
 
 function Cadastro() {
-    const [name, setName] = React.useState('');
-    const [email, setEmail] = React.useState('');
-    const [password, setPassword] = React.useState('');
-    const [loading, setLoading] = React.useState(false);
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
     async function handleCadastro(e) {
-        e.preventDefault(); 
+        e.preventDefault();
         setLoading(true);
 
-        const { data, error } = await supabase.auth.signUp({
-            email: email,
-            password: password,
-            options: {
-                data: {
-                    name: name,
-                    email: email,
-                }
-            }
-        });
+        try {
+            const response = await axios.post('http://localhost:3001/api/users/register', {
+                nome: name,
+                email: email,
+                senha: password
+            });
 
-        if (error) {
-            console.log("Resultado cadastro:", { data, error });
-            alert('Erro ao cadastrar: ' + error.message);
+            alert(response.data.message); // Mensagem do servidor
             setLoading(false);
-            return;
-        } else {
-            alert('Usuário cadastrado com sucesso! Agora você pode realizar seu login.');
+            navigate('/login'); // Redireciona para a tela de login
+        } catch (error) {
+            console.error('Erro no cadastro:', error);
+            alert(
+                error.response?.data?.error || 'Erro ao cadastrar. Verifique os dados e tente novamente.'
+            );
             setLoading(false);
-            navigate('/login');
         }
     }
 

@@ -5,6 +5,14 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.login-page-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;  
+}
+
 .glass-container{
     position: relative;
     width: 380px;
@@ -162,3 +170,4 @@ input-group label{
 .register-link a:hover{
     text-decoration: underline;
 }
+

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'; 
 import './minhas-viagens.css';
-import EditModal from './EditModal'; // Vamos criar este componente a seguir
+import EditModal from './EditModal'; 
 
 function MinhasViagens() {
   const [viagens, setViagens] = useState([]);
@@ -12,10 +13,22 @@ function MinhasViagens() {
     setViagens(viagensSalvas);
   }, []);
 
-  const handleEdit = (id) => {
+  const handleEdit = (e, id) => {
+    e.preventDefault(); 
+    e.stopPropagation(); 
     const viagemParaEditar = viagens.find((viagem) => viagem.id === id);
     setEditingViagem(viagemParaEditar);
     setIsModalOpen(true);
+  };
+
+  const handleDelete = (e, id) => {
+    e.preventDefault(); 
+    e.stopPropagation(); 
+    if (window.confirm('Tem certeza que deseja excluir esta viagem?')) {
+      const novasViagens = viagens.filter((viagem) => viagem.id !== id);
+      setViagens(novasViagens);
+      localStorage.setItem('viagens', JSON.stringify(novasViagens));
+    }
   };
 
   const handleUpdateViagem = (viagemAtualizada) => {
@@ -26,14 +39,6 @@ function MinhasViagens() {
     localStorage.setItem('viagens', JSON.stringify(novasViagens));
     setIsModalOpen(false);
     setEditingViagem(null);
-  };
-
-  const handleDelete = (id) => {
-    if (window.confirm('Tem certeza que deseja excluir esta viagem?')) {
-      const novasViagens = viagens.filter((viagem) => viagem.id !== id);
-      setViagens(novasViagens);
-      localStorage.setItem('viagens', JSON.stringify(novasViagens));
-    }
   };
 
   const handleCloseModal = () => {
@@ -49,16 +54,25 @@ function MinhasViagens() {
           <p>Nenhuma viagem encontrada.</p>
         ) : (
           viagens.map((viagem) => (
-            <div key={viagem.id} className="viagem-card">
-              {viagem.imagem && <img src={viagem.imagem} alt={viagem.destino} className="viagem-imagem"/>}
-              <h2>{viagem.destino}</h2>
-              <p>Data: {viagem.data}</p>
-              <p>Status: <span className={`status ${viagem.status.toLowerCase().replace(' ', '-')}`}>{viagem.status}</span></p>
-              <div className="card-actions">
-                <button onClick={() => handleEdit(viagem.id)} className="btn-edit">Editar</button>
-                <button onClick={() => handleDelete(viagem.id)} className="btn-delete">Excluir</button>
+          
+            <Link 
+              key={viagem.id} 
+              to={`/viagem/${viagem.id}`} 
+              state={{ viagem: viagem }} 
+              className="viagem-card-link"
+            >
+              <div className="viagem-card">
+                {viagem.imagem && <img src={viagem.imagem} alt={viagem.destino} className="viagem-imagem"/>}
+                <h2>{viagem.destino}</h2>
+                <p>Data: {viagem.data}</p>
+                <p>Status: <span className={`status ${viagem.status.toLowerCase().replace(' ', '-')}`}>{viagem.status}</span></p>
+                <div className="card-actions">
+                  
+                  <button onClick={(e) => handleEdit(e, viagem.id)} className="btn-edit">Editar</button>
+                  <button onClick={(e) => handleDelete(e, viagem.id)} className="btn-delete">Excluir</button>
+                </div>
               </div>
-            </div>
+            </Link>
           ))
         )}
       </div>

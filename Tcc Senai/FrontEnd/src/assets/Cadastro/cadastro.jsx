@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './cadastro.css';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -9,6 +9,15 @@ function Cadastro() {
     const [password, setPassword] = React.useState('');
     const [loading, setLoading] = React.useState(false);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        document.body.classList.add('login-page-body');
+        
+        // Função de limpeza para remover a classe quando o componente for desmontado
+        return () => {
+            document.body.classList.remove('login-page-body');
+        };
+    }, []);
 
     async function handleCadastro(e) {
         e.preventDefault(); 

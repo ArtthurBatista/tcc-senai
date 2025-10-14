@@ -111,6 +111,12 @@
   background-color: #c82333;
 }
 
+.viagem-card-link {
+  text-decoration: none; /* Remove o sublinhado */
+  color: inherit;       /* Faz o texto herdar a cor do elemento pai (preto, neste caso) */
+  display: block;
+}
+
 
 @media (max-width: 768px) {
   .viagens-grid {

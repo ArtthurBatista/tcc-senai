@@ -3,6 +3,7 @@ body {
   background-size: 110% 110%;
   min-height: 100vh;
   padding: 0 20px;
+  padding-top: 60px; 
   color: #fff;
 }
 

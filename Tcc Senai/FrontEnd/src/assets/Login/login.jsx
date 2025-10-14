@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './login.css';
 import { Link } from 'react-router-dom';
 
 function Login() {
+    useEffect(() => {
+        document.body.classList.add('login-page-body');
+        
+        // Função de limpeza para remover a classe quando o componente for desmontado
+        return () => {
+            document.body.classList.remove('login-page-body');
+        };
+    }, []); // O array vazio garante que isso rode apenas uma vez (montagem/desmontagem)
+
     return (
         <div className="glass-container">
             <h2>Login</h2>

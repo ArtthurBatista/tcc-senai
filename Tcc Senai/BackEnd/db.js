@@ -4,8 +4,8 @@ const pool = mariadb.createPool({
     host: 'localhost',
     user: 'root',
     password: '1234',
-    database: 'users_orders_system', 
-    port: 3307,
+    database: 'clients_orders_system', 
+    port: 3306,
     waitForConnections: true,
     connectionLimit: 30,
 });

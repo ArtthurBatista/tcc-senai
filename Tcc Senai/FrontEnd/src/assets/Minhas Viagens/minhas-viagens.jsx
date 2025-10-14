@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './minhas-viagens.css';
 
 function MinhasViagens() {
-  const [viagens, setViagens] = useState([
-    { id: 1, destino: 'Paris', data: '2025-12-01', status: 'Planejada' },
-    { id: 2, destino: 'Tokyo', data: '2026-03-15', status: 'Concluída' },
-    { id: 3, destino: 'Rio de Janeiro', data: '2025-10-10', status: 'Em andamento' },
-  ]);
+  const [viagens, setViagens] = useState([]);
+
+  useEffect(() => {
+    const viagensSalvas = JSON.parse(localStorage.getItem('viagens')) || [];
+    setViagens(viagensSalvas);
+  }, []);
 
   return (
     <div className="minhas-viagens-container">

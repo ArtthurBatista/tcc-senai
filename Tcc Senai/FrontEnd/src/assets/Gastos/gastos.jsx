@@ -23,27 +23,26 @@ const ExpensesPage = () => {
     { name: 'Outros', color: '#BB8FCE' }
   ];
 
-  // Inicializar com alguns gastos de exemplo
   useEffect(() => {
     const initialExpenses = [
-      { id: 1, description: 'Mercado', amount: 250, category: 'Alimentação', date: '2023-10-15' },
-      { id: 2, description: 'Combustível', amount: 180, category: 'Transporte', date: '2023-10-12' },
-      { id: 3, description: 'Aluguel', amount: 1200, category: 'Moradia', date: '2023-10-01' },
-      { id: 4, description: 'Cinema', amount: 60, category: 'Lazer', date: '2023-10-10' }
+      { id: 1, description: 'Mercado', amount: 250, category: 'Alimentação', date: '2025-10-15' },
+      { id: 2, description: 'Combustível', amount: 180, category: 'Transporte', date: '2025-10-12' },
+      { id: 3, description: 'Aluguel', amount: 1200, category: 'Moradia', date: '2025-10-01' },
+      { id: 4, description: 'Cinema', amount: 60, category: 'Lazer', date: '2025-10-10' }
     ];
     
     setExpenses(initialExpenses);
     calculateTotals(initialExpenses);
   }, []);
 
-  // Calcular totais
+ 
   const calculateTotals = (expensesList) => {
     const total = expensesList.reduce((sum, expense) => sum + parseFloat(expense.amount), 0);
     setTotalExpenses(total);
     setRemainingBudget(monthlyBudget - total);
   };
 
-  // Adicionar novo gasto
+
   const handleAddExpense = (e) => {
     e.preventDefault();
     if (!newExpense.description || !newExpense.amount) return;
@@ -58,7 +57,7 @@ const ExpensesPage = () => {
     setExpenses(updatedExpenses);
     calculateTotals(updatedExpenses);
     
-    // Reset form
+   
     setNewExpense({
       description: '',
       amount: '',
@@ -67,14 +66,14 @@ const ExpensesPage = () => {
     });
   };
 
-  // Remover gasto
+ 
   const handleDeleteExpense = (id) => {
     const updatedExpenses = expenses.filter(expense => expense.id !== id);
     setExpenses(updatedExpenses);
     calculateTotals(updatedExpenses);
   };
 
-  // Calcular gastos por categoria
+ 
   const getExpensesByCategory = () => {
     const categoryTotals = {};
     categories.forEach(cat => {
@@ -88,7 +87,7 @@ const ExpensesPage = () => {
     return categoryTotals;
   };
 
-  // Calcular porcentagem para gráfico de barras
+
   const getCategoryPercentage = (categoryAmount) => {
     if (totalExpenses === 0) return 0;
     return (categoryAmount / totalExpenses) * 100;
@@ -121,7 +120,6 @@ const ExpensesPage = () => {
       </div>
 
       <div className="dashboard-content">
-        {/* Formulário para adicionar gastos */}
         <div className="glass-card">
           <h2>Adicionar Novo Gasto</h2>
           <form onSubmit={handleAddExpense} className="expense-form">
@@ -173,7 +171,7 @@ const ExpensesPage = () => {
           </form>
         </div>
 
-        {/* Gráfico de gastos por categoria */}
+      
         <div className="glass-card">
           <h2>Gastos por Categoria</h2>
           <div className="chart-container">
@@ -195,7 +193,7 @@ const ExpensesPage = () => {
           </div>
         </div>
 
-        {/* Lista de gastos recentes */}
+   
         <div className="glass-card full-width">
           <h2>Gastos Recentes</h2>
           <div className="expenses-table-container">
@@ -250,7 +248,6 @@ const ExpensesPage = () => {
           </div>
         </div>
 
-        {/* Distribuição de gastos (gráfico de pizza visual) */}
         <div className="glass-card">
           <h2>Distribuição de Gastos</h2>
           <div className="pie-container">

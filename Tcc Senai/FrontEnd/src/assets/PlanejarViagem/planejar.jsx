@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './planejar.css';
+import { useNavigate } from 'react-router-dom';
 
 function PlanejarViagem() {
   const [formData, setFormData] = useState({
@@ -11,6 +12,8 @@ function PlanejarViagem() {
     transporte: '',
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -20,14 +23,29 @@ function PlanejarViagem() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(
-      `Destino: ${formData.destino}\n` +
-      `Data: ${formData.data}\n` +
-      `Número de pessoas: ${formData.pessoas}\n` +
-      `Orçamento: ${formData.orcamento}\n` +
-      `Tipo de viagem: ${formData.tipo}\n` +
-      `Transporte: ${formData.transporte}`
-    );
+
+    const novaViagem = {
+      id: Date.now(),
+      destino: formData.destino,
+      data: formData.data,
+      pessoas: formData.pessoas,
+      orcamento: formData.orcamento,
+      tipo: formData.tipo,
+      transporte: formData.transporte,
+      status: 'Planejada',
+    };
+
+
+    const viagensSalvas = JSON.parse(localStorage.getItem('viagens')) || [];
+
+  
+    viagensSalvas.push(novaViagem);
+
+    
+    localStorage.setItem('viagens', JSON.stringify(viagensSalvas));
+
+    
+    navigate('/minhas-viagens');
   };
 
   return (

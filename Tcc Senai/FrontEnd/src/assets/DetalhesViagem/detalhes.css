@@ -1,24 +1,16 @@
-.detalhes-viagem-container {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  color: #333; 
-}
-
 .trip-details-container {
   padding: 2rem;
   max-width: 800px;
   margin: 2rem auto;
-  background-color: #fff;
+  /* Fundo Branco para a página de detalhes */
+  background-color: #fff; 
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: #333; 
 }
 
 .trip-details-container h1,
+.trip-details-container h2,
 .trip-details-container p {
   color: #333; 
 }
@@ -37,4 +29,6 @@
 
 .trip-details-container hr {
   margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid #eee;
 }

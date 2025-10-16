@@ -6,52 +6,29 @@
 }
 
 body {
+  /* Mantenha o body style */
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
   padding: 20px;
   color: #fff;
 }
 
-.dashboard {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-top: 20px;
+/* O wrapper para o componente Checklist na página de Detalhes */
+.checklist-component-wrapper {
+  margin-top: 20px;
+  padding-bottom: 20px;
 }
 
-.dashboard-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  text-align: center;
-  padding-bottom: 30px;
-}
-
-.dashboard-header h1 {
-  font-size: 36px;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.dashboard-header p {
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.dashboard-content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
+/* Glass Card - Estilo visual principal */
 .glass-card {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   padding: 20px;
   backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  color: #fff;
+  /* Sombra leve para destacar, mesmo em fundo claro (detalhes.jsx) */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); 
+  color: #fff; /* Texto branco para o efeito glass */
   width: 100%;
   transition: transform 0.3s ease;
 }
@@ -80,23 +57,21 @@ body {
   flex: 1;
   padding: 12px;
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
+  border: 1px solid #ccc; /* Borda cinza */
+  background: #fff; /* Fundo branco */
+  color: #333; /* Cor do texto digitado escura */
   font-size: 16px;
-  backdrop-filter: blur(5px);
 }
 
 .checklist-form input::placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: #999; /* Cor do placeholder cinza */
 }
 
 .add-button {
   padding: 12px 20px;
   border-radius: 10px;
   border: none;
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
+  color: rgba(255, 255, 255, 0.1);
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -104,7 +79,7 @@ body {
 }
 
 .add-button:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: #667eea; /* Cor de hover (azul do tema) */
 }
 
 
@@ -144,6 +119,13 @@ body {
 
 .task-item span {
   font-size: 16px;
+  color: #333 !important; /* FORÇA a cor do texto a ser escura */
+  flex-grow: 1;
+}
+
+.task-item span.checked {
+  text-decoration: line-through;
+  color: #888 !important; /* FORÇA a cor do texto riscado a ser cinza */
 }
 
 .task-item.done span {
@@ -173,7 +155,7 @@ body {
   margin-top: 10px;
 }
 
-
+/* Media Query para responsividade */
 @media (max-width: 768px) {
   .checklist-form {
     flex-direction: column;
